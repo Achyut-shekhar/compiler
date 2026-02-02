@@ -1,0 +1,34 @@
+%{
+  #include<stdio.h>
+  
+%}
+%%
+"//".*            { fprintf(yyout, "COMMENT: %s\n", yytext); }
+"/*"[.|\n]*"*/" { fprintf(yyout, "COMMENT: %s\n", yytext); }
+
+%%
+
+int main(){
+  printf("Paste your C-fragment and press Ctrl+D:\n");
+  yyin = fopen("input.txt", "r");
+  if (!yyin) {
+    printf("Error: Could not open input.txt\n");
+    return 1;
+  }
+  yyout = fopen("output.txt", "w");
+  if (!yyout) {
+    printf("Error: Could not open output.txt\n");
+    fclose(yyin);
+    return 1;
+  }
+  yylex();
+  fclose(yyin);
+  fclose(yyout);
+  printf("Processing complete. Comments written to output.txt\n");
+  return 0;
+}
+
+int yywrap(){
+  return 1;
+
+}
