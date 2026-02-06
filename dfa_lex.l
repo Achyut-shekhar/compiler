@@ -6,7 +6,7 @@ extern FILE *yyin;
 /* Pattern that matches strings ending with "10" */
 %%
 
-[01]*10     { printf("ACCEPTED: %s (ends with 10)\n", yytext); }
+[01]*10 &&    { printf("ACCEPTED: %s (ends with 10)\n", yytext); }
 
 [01]+       { printf("REJECTED: %s (does not end with 10)\n", yytext); }
 
