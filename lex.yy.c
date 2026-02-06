@@ -351,8 +351,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 3
-#define YY_END_OF_BUFFER 4
+#define YY_NUM_RULES 5
+#define YY_END_OF_BUFFER 6
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -360,19 +360,19 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[13] =
+static const flex_int16_t yy_accept[14] =
     {   0,
-        0,    0,    4,    3,    3,    0,    1,    0,    0,    1,
-        2,    0
+        0,    0,    6,    4,    3,    3,    2,    2,    3,    2,
+        2,    1,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    2,
+        1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
+        1,    1,    2,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    3,    1,    1,    1,    4,    5,    1,    1,    1,
+        1,    2,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    4,    5,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -381,7 +381,7 @@ static const YY_CHAR yy_ec[256] =
 
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    4,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -400,33 +400,31 @@ static const YY_CHAR yy_ec[256] =
 
 static const YY_CHAR yy_meta[6] =
     {   0,
-        1,    2,    3,    3,    4
+        1,    2,    2,    1,    1
     } ;
 
-static const flex_int16_t yy_base[17] =
+static const flex_int16_t yy_base[15] =
     {   0,
-       14,   13,   17,   20,    0,   13,    0,   10,    0,    0,
-       20,   20,    5,    8,   11,    0
+        0,    0,   10,   11,    0,    0,    2,    5,    0,    0,
+        0,    0,   11,    6
     } ;
 
-static const flex_int16_t yy_def[17] =
+static const flex_int16_t yy_def[15] =
     {   0,
-       13,   13,   12,   12,   12,   14,   15,   14,   16,   15,
-       12,    0,   12,   12,   12,   12
+       13,    1,   13,   13,   14,   14,   13,    7,   14,    7,
+        8,    7,    0,   13
     } ;
 
-static const flex_int16_t yy_nxt[26] =
+static const flex_int16_t yy_nxt[17] =
     {   0,
-       12,   12,    6,   11,    7,    4,    4,    4,    4,    8,
-        8,   10,    9,   10,   10,    9,   12,    5,    5,    3,
-       12,   12,   12,   12,   12
+        4,    5,    6,    7,    8,   10,   11,    9,   12,   13,
+        3,   13,   13,   13,   13,   13
     } ;
 
-static const flex_int16_t yy_chk[26] =
+static const flex_int16_t yy_chk[17] =
     {   0,
-        0,    0,    5,   16,    5,   13,   13,   13,   13,   14,
-       14,   15,    8,   15,   15,    6,    3,    2,    1,   12,
-       12,   12,   12,   12,   12
+        1,    1,    1,    1,    1,    7,    7,   14,    8,    3,
+       13,   13,   13,   13,   13,   13
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -443,12 +441,13 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "p7manual.l"
-#line 2 "p7manual.l"
-  #include<stdio.h>
-  
+#line 1 "dfa_lex.l"
+#line 2 "dfa_lex.l"
+#include <stdio.h>
+extern FILE *yyin;
+#line 449 "lex.yy.c"
+/* Pattern that matches strings ending with "10" */
 #line 451 "lex.yy.c"
-#line 452 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -665,7 +664,8 @@ YY_DECL
 		}
 
 	{
-#line 5 "p7manual.l"
+#line 7 "dfa_lex.l"
+
 
 #line 671 "lex.yy.c"
 
@@ -694,13 +694,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 13 )
+				if ( yy_current_state >= 14 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 20 );
+		while ( yy_base[yy_current_state] != 11 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -726,21 +726,31 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 6 "p7manual.l"
-{ fprintf(yyout, "COMMENT: %s\n", yytext); }
+#line 9 "dfa_lex.l"
+{ printf("ACCEPTED: %s (ends with 10)\n", yytext); }
 	YY_BREAK
 case 2:
-/* rule 2 can match eol */
 YY_RULE_SETUP
-#line 7 "p7manual.l"
-{ fprintf(yyout, "COMMENT: %s\n", yytext); }
+#line 11 "dfa_lex.l"
+{ printf("REJECTED: %s (does not end with 10)\n", yytext); }
 	YY_BREAK
 case 3:
+/* rule 3 can match eol */
 YY_RULE_SETUP
-#line 9 "p7manual.l"
+#line 13 "dfa_lex.l"
+;  /* Skip whitespace */
+	YY_BREAK
+case 4:
+YY_RULE_SETUP
+#line 15 "dfa_lex.l"
+{ printf(" ERROR: Invalid character %s\n", yytext); }
+	YY_BREAK
+case 5:
+YY_RULE_SETUP
+#line 17 "dfa_lex.l"
 ECHO;
 	YY_BREAK
-#line 744 "lex.yy.c"
+#line 754 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1037,7 +1047,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 13 )
+			if ( yy_current_state >= 14 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1065,11 +1075,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 13 )
+		if ( yy_current_state >= 14 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 12);
+	yy_is_jam = (yy_current_state == 13);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1745,30 +1755,26 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 9 "p7manual.l"
+#line 17 "dfa_lex.l"
 
 
-int main(){
-  printf("Paste your C-fragment and press Ctrl+D:\n");
-  yyin = fopen("input.txt", "r");
-  if (!yyin) {
-    printf("Error: Could not open input.txt\n");
-    return 1;
-  }
-  yyout = fopen("output.txt", "w");
-  if (!yyout) {
-    printf("Error: Could not open output.txt\n");
+int main() {
+    yyin = fopen("dfa_test.txt", "r");
+    if (!yyin) {
+        printf("Error: Could not open input.txt\n");
+        return 1;
+    }
+
+    printf("DFA in Lex - Accepts binary strings ending with '10'\n");
+    printf("Reading input from input.txt...\n\n");
+
+    yylex();
+
     fclose(yyin);
+    return 0;
+}
+
+int yywrap() {
     return 1;
-  }
-  yylex();
-  fclose(yyin);
-  fclose(yyout);
-  printf("Processing complete. Comments written to output.txt\n");
-  return 0;
 }
 
-int yywrap(){
-  return 1;
-
-}
