@@ -351,8 +351,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 13
-#define YY_END_OF_BUFFER 14
+#define YY_NUM_RULES 3
+#define YY_END_OF_BUFFER 4
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -360,10 +360,10 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[21] =
+static const flex_int16_t yy_accept[18] =
     {   0,
-        0,    0,    0,    0,    0,    0,   14,    3,    4,    2,
-        1,    7,    8,    6,    5,   11,   12,    9,   10,    0
+        0,    0,    4,    3,    3,    3,    0,    2,    0,    0,
+        0,    0,    0,    0,    0,    1,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -372,12 +372,12 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    3,    4,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    3,    1,    1,    1,
 
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -398,33 +398,35 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[5] =
+static const YY_CHAR yy_meta[4] =
     {   0,
-        1,    1,    1,    1
+        1,    1,    1
     } ;
 
-static const flex_int16_t yy_base[21] =
+static const flex_int16_t yy_base[18] =
     {   0,
-        0,    0,    4,    0,    8,    0,   13,   14,   14,   14,
-       14,   14,   14,   14,   14,   14,   14,   14,   14,   14
+        0,    0,   20,    3,   21,    6,    0,   21,    0,    9,
+       12,   17,   16,   15,   14,   21,   21
     } ;
 
-static const flex_int16_t yy_def[21] =
+static const flex_int16_t yy_def[18] =
     {   0,
-       20,    1,   20,    3,   20,    5,   20,   20,   20,   20,
-       20,   20,   20,   20,   20,   20,   20,   20,   20,    0
+       17,    1,   17,   17,   17,   17,    4,   17,    6,   17,
+       17,    4,    6,   10,   11,   17,    0
     } ;
 
-static const flex_int16_t yy_nxt[19] =
+static const flex_int16_t yy_nxt[25] =
     {   0,
-        8,    9,   10,   11,   12,   13,   14,   15,   16,   17,
-       18,   19,   20,    7,   20,   20,   20,   20
+        4,    5,    6,    7,    8,    9,   10,    8,   11,   12,
+        8,   13,   14,    8,   15,   16,   16,   16,   16,   17,
+        3,   17,   17,   17
     } ;
 
-static const flex_int16_t yy_chk[19] =
+static const flex_int16_t yy_chk[25] =
     {   0,
-        1,    1,    1,    1,    3,    3,    3,    3,    5,    5,
-        5,    5,    7,   20,   20,   20,   20,   20
+        1,    1,    1,    4,    4,    4,    6,    6,    6,   10,
+       10,   10,   11,   11,   11,   15,   14,   13,   12,    3,
+       17,   17,   17,   17
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -441,17 +443,13 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "dfa_even.l"
-#line 2 "dfa_even.l"
-  #include<stdio.h>
-  #include<string.h>
-#line 449 "lex.yy.c"
-
+#line 1 "dfa_thirdlast.l"
+#line 2 "dfa_thirdlast.l"
+#include <stdio.h>
+#line 450 "lex.yy.c"
 #line 451 "lex.yy.c"
 
 #define INITIAL 0
-#define A 1
-#define B 2
 
 #ifndef YY_NO_UNISTD_H
 /* Special case for "unistd.h", since it is non-ANSI. We include it way
@@ -666,9 +664,9 @@ YY_DECL
 		}
 
 	{
-#line 7 "dfa_even.l"
+#line 5 "dfa_thirdlast.l"
 
-#line 672 "lex.yy.c"
+#line 670 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -695,13 +693,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 21 )
+				if ( yy_current_state >= 18 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 14 );
+		while ( yy_base[yy_current_state] != 21 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -726,77 +724,24 @@ do_action:	/* This label is used only to access EOF actions. */
 			goto yy_find_action;
 
 case 1:
+/* rule 1 can match eol */
 YY_RULE_SETUP
-#line 8 "dfa_even.l"
-BEGIN INITIAL;
+#line 6 "dfa_thirdlast.l"
+{ printf("ACCEPTED: %s", yytext); }
 	YY_BREAK
 case 2:
+/* rule 2 can match eol */
 YY_RULE_SETUP
-#line 9 "dfa_even.l"
-BEGIN A;
+#line 7 "dfa_thirdlast.l"
+{ printf("REJECTED: %s", yytext); }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 10 "dfa_even.l"
-BEGIN B;
-	YY_BREAK
-case 4:
-/* rule 4 can match eol */
-YY_RULE_SETUP
-#line 11 "dfa_even.l"
-{BEGIN INITIAL; printf("Accepted\n");}
-	YY_BREAK
-case 5:
-YY_RULE_SETUP
-#line 12 "dfa_even.l"
-BEGIN A;
-	YY_BREAK
-case 6:
-YY_RULE_SETUP
-#line 13 "dfa_even.l"
-BEGIN INITIAL;
-	YY_BREAK
-case 7:
-YY_RULE_SETUP
-#line 14 "dfa_even.l"
-BEGIN B;
-	YY_BREAK
-case 8:
-/* rule 8 can match eol */
-YY_RULE_SETUP
-#line 15 "dfa_even.l"
-{BEGIN INITIAL; printf("NOT Accepted\n");}
-	YY_BREAK
-case 9:
-YY_RULE_SETUP
-#line 16 "dfa_even.l"
-BEGIN B;
-	YY_BREAK
-case 10:
-YY_RULE_SETUP
-#line 17 "dfa_even.l"
-BEGIN B;
-	YY_BREAK
-case 11:
-YY_RULE_SETUP
-#line 18 "dfa_even.l"
-BEGIN B;
-	YY_BREAK
-case 12:
-/* rule 12 can match eol */
-YY_RULE_SETUP
-#line 19 "dfa_even.l"
-{BEGIN INITIAL; printf("NOT Accepted\n");}
-	YY_BREAK
-case 13:
-YY_RULE_SETUP
-#line 20 "dfa_even.l"
+#line 8 "dfa_thirdlast.l"
 ECHO;
 	YY_BREAK
-#line 797 "lex.yy.c"
+#line 744 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
-case YY_STATE_EOF(A):
-case YY_STATE_EOF(B):
 	yyterminate();
 
 	case YY_END_OF_BUFFER:
@@ -1092,7 +1037,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 21 )
+			if ( yy_current_state >= 18 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1120,11 +1065,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 21 )
+		if ( yy_current_state >= 18 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 20);
+	yy_is_jam = (yy_current_state == 17);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1800,18 +1745,17 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 20 "dfa_even.l"
+#line 8 "dfa_thirdlast.l"
 
 
-int yywrap(){
-  return 1;
+int yywrap() {
+    return 1;
 }
 
-int main(){
-  printf("DFA - Accepts strings with even number of 0s\n");
-  printf("Enter binary strings (press Ctrl+D or Ctrl+Z to exit):\n\n");
-  
-  yylex();
-  
-  return 0;
+int main() {
+    printf("DFA to check if third last character is 'a'\n");
+    printf("Enter strings (Ctrl+D or Ctrl+Z to exit):\n");
+    yylex();
+    return 0;
 }
+
