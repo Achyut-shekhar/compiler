@@ -1,26 +1,19 @@
 %{
-#include <stdio.h>
-
-int vowels = 0, consonants = 0, digits = 0, spaces = 0;
+    #include<stdio.h>
 %}
-
 %%
-[aeiouAEIOU]     { vowels++; }
-[0-9]            { digits++; }
-[ \t\n]          { spaces++; }
-[a-zA-Z]         { consonants++; }
-.                { /* ignore other characters */ }
+[_a-zA-Z][_a-zA-Z0-9]* {printf("Valid Identifier\n");}
+[0-9][_a-zA-Z0-9]* {printf("Invalid Identifier\n");}
+[^ \t\n]+ {printf("Invalid Identifier\n");}
+\n {;}
 %%
-
-int main() {
-    yylex();
-    printf("Vowels: %d\n", vowels);
-    printf("Consonants: %d\n", consonants);
-    printf("Digits: %d\n", digits);
-    printf("Spaces: %d\n", spaces);
-    return 0;
-}
-
-int yywrap() {
+int yywrap()
+{
     return 1;
+}
+int main()
+{
+    printf("Enter Input: ");
+    yylex();
+    return 0;
 }

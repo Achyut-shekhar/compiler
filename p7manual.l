@@ -4,27 +4,26 @@
 %}
 %%
 "//".*            { fprintf(yyout, "COMMENT: %s\n", yytext); }
-"/*"[.|\n]*"*/" { fprintf(yyout, "COMMENT: %s\n", yytext); }
+"/*"(.|\n)*"*/"   { fprintf(yyout, "COMMENT: %s\n", yytext); }
 
 %%
 
 int main(){
-  printf("Paste your C-fragment and press Ctrl+D:\n");
-  yyin = fopen("input.txt", "r");
+  yyin = fopen("input.c", "r");
   if (!yyin) {
-    printf("Error: Could not open input.txt\n");
+    printf("Error: Could not open input.c\n");
     return 1;
   }
-  yyout = fopen("output.txt", "w");
+  yyout = fopen("output.c", "w");
   if (!yyout) {
-    printf("Error: Could not open output.txt\n");
+    printf("Error: Could not open output.c\n");
     fclose(yyin);
     return 1;
   }
   yylex();
   fclose(yyin);
   fclose(yyout);
-  printf("Processing complete. Comments written to output.txt\n");
+  printf("Processing complete. Comments written to output.c\n");
   return 0;
 }
 

@@ -27,8 +27,15 @@
 %%
 
 int main() {
-    printf("Paste your C-fragment and press Ctrl+D:\n");
+    FILE *file = fopen("input.txt", "r");
+    if (!file) {
+        printf("Error: Cannot open input.txt\n");
+        return 1;
+    }
+    yyin = file;
+    printf("Processing input from input.txt...\n\n");
     yylex();
+    fclose(file);
     return 0;
 }
 
