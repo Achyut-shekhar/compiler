@@ -360,9 +360,9 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[9] =
+static const flex_int16_t yy_accept[7] =
     {   0,
-        0,    0,    4,    2,    2,    0,    1,    0
+        0,    0,    4,    1,    2,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -372,8 +372,8 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    3,
-        1,    4,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -397,31 +397,29 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[5] =
+static const YY_CHAR yy_meta[3] =
     {   0,
-        1,    1,    1,    2
+        1,    1
     } ;
 
-static const flex_int16_t yy_base[10] =
+static const flex_int16_t yy_base[7] =
     {   0,
-        0,    0,    7,    8,    0,    2,    8,    8,    4
+        0,    0,    3,    4,    4,    4
     } ;
 
-static const flex_int16_t yy_def[10] =
+static const flex_int16_t yy_def[7] =
     {   0,
-        8,    1,    8,    8,    9,    9,    8,    0,    8
+        6,    1,    6,    6,    6,    0
     } ;
 
-static const flex_int16_t yy_nxt[13] =
+static const flex_int16_t yy_nxt[7] =
     {   0,
-        4,    4,    5,    4,    6,    7,    8,    3,    8,    8,
-        8,    8
+        4,    5,    6,    3,    6,    6
     } ;
 
-static const flex_int16_t yy_chk[13] =
+static const flex_int16_t yy_chk[7] =
     {   0,
-        1,    1,    1,    1,    9,    6,    3,    8,    8,    8,
-        8,    8
+        1,    1,    3,    6,    6,    6
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -438,15 +436,12 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "p8.l"
-/* 
-Design a LEX Code to extract all html tags in the HTML file given at run time and store intotext file given at run time.
-*/
-#line 6 "p8.l"
-#include <stdio.h>
-#include <stdlib.h>
-#line 449 "lex.yy.c"
-#line 450 "lex.yy.c"
+#line 1 "p3.l"
+#line 2 "p3.l"
+/* Lex program to print alternate characters of the given input */
+int count = 0;
+#line 444 "lex.yy.c"
+#line 445 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -663,9 +658,9 @@ YY_DECL
 		}
 
 	{
-#line 10 "p8.l"
+#line 6 "p3.l"
 
-#line 669 "lex.yy.c"
+#line 664 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -692,13 +687,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 9 )
+				if ( yy_current_state >= 7 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 8 );
+		while ( yy_base[yy_current_state] != 4 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -723,23 +718,30 @@ do_action:	/* This label is used only to access EOF actions. */
 			goto yy_find_action;
 
 case 1:
-/* rule 1 can match eol */
 YY_RULE_SETUP
-#line 11 "p8.l"
-{ fprintf(yyout, "%s\n", yytext); }
+#line 7 "p3.l"
+{ 
+        count++;
+        if(count % 2 == 1) {
+            printf("%c", yytext[0]);
+        }
+    }
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 12 "p8.l"
-{ ; }
+#line 13 "p3.l"
+{ 
+        printf("\n");
+        count = 0;
+    }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 13 "p8.l"
+#line 17 "p3.l"
 ECHO;
 	YY_BREAK
-#line 743 "lex.yy.c"
+#line 745 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1036,7 +1038,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 9 )
+			if ( yy_current_state >= 7 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1064,11 +1066,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 9 )
+		if ( yy_current_state >= 7 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 8);
+	yy_is_jam = (yy_current_state == 6);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1744,32 +1746,16 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 13 "p8.l"
+#line 17 "p3.l"
 
 
 int yywrap() {
-    return 1;
+    return 1;   
 }
 
 int main() {
-    yyin = fopen("index.html", "r");
-    if (!yyin) {
-        printf("Error: index.html not found\n");
-        return 1;
-    }
-
-    yyout = fopen("output.txt", "w");
-    if (!yyout) {
-        printf("Error: Could not create output.txt\n");
-        fclose(yyin);
-        return 1;
-    }
-
+    printf("Enter input: ");
     yylex();
-
-    fclose(yyin);
-    fclose(yyout);
-
-    printf("Success! Tags extracted to output.txt\n");
     return 0;
 }
+
