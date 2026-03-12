@@ -351,8 +351,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 13
-#define YY_END_OF_BUFFER 14
+#define YY_NUM_RULES 12
+#define YY_END_OF_BUFFER 13
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -362,8 +362,8 @@ struct yy_trans_info
 	};
 static const flex_int16_t yy_accept[21] =
     {   0,
-        0,    0,    0,    0,    0,    0,   14,    3,    4,    2,
-        1,    7,    8,    6,    5,   11,   12,    9,   10,    0
+        0,    0,    0,    0,    0,    0,   13,    3,    4,    1,
+        2,   12,    7,    8,    5,    6,   11,    9,   10,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -375,7 +375,7 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    3,    4,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    5,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
 
@@ -398,15 +398,15 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[5] =
+static const YY_CHAR yy_meta[6] =
     {   0,
-        1,    1,    1,    1
+        1,    1,    1,    1,    1
     } ;
 
 static const flex_int16_t yy_base[21] =
     {   0,
-        0,    0,    4,    0,    8,    0,   13,   14,   14,   14,
-       14,   14,   14,   14,   14,   14,   14,   14,   14,   14
+        0,    0,    5,    0,   10,    0,   16,   17,   17,   17,
+       17,   17,   17,   17,   17,   17,   17,   17,   17,   17
     } ;
 
 static const flex_int16_t yy_def[21] =
@@ -415,16 +415,18 @@ static const flex_int16_t yy_def[21] =
        20,   20,   20,   20,   20,   20,   20,   20,   20,    0
     } ;
 
-static const flex_int16_t yy_nxt[19] =
+static const flex_int16_t yy_nxt[23] =
     {   0,
-        8,    9,   10,   11,   12,   13,   14,   15,   16,   17,
-       18,   19,   20,    7,   20,   20,   20,   20
+        8,    9,   10,   11,   12,   13,   14,   15,   16,   12,
+       12,   17,   18,   19,   12,   20,    7,   20,   20,   20,
+       20,   20
     } ;
 
-static const flex_int16_t yy_chk[19] =
+static const flex_int16_t yy_chk[23] =
     {   0,
-        1,    1,    1,    1,    3,    3,    3,    3,    5,    5,
-        5,    5,    7,   20,   20,   20,   20,   20
+        1,    1,    1,    1,    1,    3,    3,    3,    3,    3,
+        5,    5,    5,    5,    5,    7,   20,   20,   20,   20,
+       20,   20
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -441,17 +443,16 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "dfa_even.l"
-#line 2 "dfa_even.l"
-  #include<stdio.h>
-  #include<string.h>
-#line 449 "lex.yy.c"
+#line 1 "start0.l"
+#line 2 "start0.l"
+   #include<stdio.h>
+#line 450 "lex.yy.c"
 
-#line 451 "lex.yy.c"
+#line 452 "lex.yy.c"
 
 #define INITIAL 0
 #define A 1
-#define B 2
+#define DEAD 2
 
 #ifndef YY_NO_UNISTD_H
 /* Special case for "unistd.h", since it is non-ANSI. We include it way
@@ -666,9 +667,9 @@ YY_DECL
 		}
 
 	{
-#line 7 "dfa_even.l"
+#line 5 "start0.l"
 
-#line 672 "lex.yy.c"
+#line 673 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -701,7 +702,7 @@ yy_match:
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 14 );
+		while ( yy_base[yy_current_state] != 17 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -727,76 +728,71 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 8 "dfa_even.l"
-BEGIN INITIAL;
+#line 6 "start0.l"
+BEGIN A;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 9 "dfa_even.l"
-BEGIN A;
+#line 7 "start0.l"
+BEGIN INITIAL;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 10 "dfa_even.l"
-BEGIN B;
+#line 8 "start0.l"
+BEGIN DEAD;
 	YY_BREAK
 case 4:
 /* rule 4 can match eol */
 YY_RULE_SETUP
-#line 11 "dfa_even.l"
-{BEGIN INITIAL; printf("Accepted\n");}
+#line 9 "start0.l"
+{BEGIN INITIAL;printf("string not accepted");}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 12 "dfa_even.l"
+#line 10 "start0.l"
 BEGIN A;
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 13 "dfa_even.l"
-BEGIN INITIAL;
+#line 11 "start0.l"
+BEGIN A;
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 14 "dfa_even.l"
-BEGIN B;
+#line 12 "start0.l"
+BEGIN DEAD;
 	YY_BREAK
 case 8:
 /* rule 8 can match eol */
 YY_RULE_SETUP
-#line 15 "dfa_even.l"
-{BEGIN INITIAL; printf("NOT Accepted\n");}
+#line 13 "start0.l"
+{BEGIN INITIAL;printf("accepted");}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 16 "dfa_even.l"
-BEGIN B;
+#line 14 "start0.l"
+BEGIN DEAD;
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 17 "dfa_even.l"
-BEGIN B;
+#line 15 "start0.l"
+BEGIN DEAD;
 	YY_BREAK
 case 11:
+/* rule 11 can match eol */
 YY_RULE_SETUP
-#line 18 "dfa_even.l"
-BEGIN B;
+#line 16 "start0.l"
+{BEGIN INITIAL ;printf("not accepted");}
 	YY_BREAK
 case 12:
-/* rule 12 can match eol */
 YY_RULE_SETUP
-#line 19 "dfa_even.l"
-{BEGIN INITIAL; printf("NOT Accepted\n");}
-	YY_BREAK
-case 13:
-YY_RULE_SETUP
-#line 20 "dfa_even.l"
+#line 17 "start0.l"
 ECHO;
 	YY_BREAK
-#line 797 "lex.yy.c"
+#line 793 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(A):
-case YY_STATE_EOF(B):
+case YY_STATE_EOF(DEAD):
 	yyterminate();
 
 	case YY_END_OF_BUFFER:
@@ -1800,18 +1796,13 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 20 "dfa_even.l"
-
+#line 17 "start0.l"
 
 int yywrap(){
   return 1;
 }
-
-int main(){
-  printf("DFA - Accepts strings with even number of 0s\n");
-  printf("Enter binary strings (press Ctrl+D or Ctrl+Z to exit):\n\n");
-  
+int main()
+{
+  printf("input the string");
   yylex();
-  
-  return 0;
 }

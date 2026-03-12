@@ -2,28 +2,33 @@
   #include<stdio.h>
   #include<string.h>
 %}
-%s A B C DEAD
+%s A B C D DEAD
 
 %%
 <INITIAL>0  BEGIN A;
 <INITIAL>1  BEGIN C;
 <INITIAL>[^01\n] BEGIN DEAD;
-<INITIAL>\n   {BEGIN INITIAL; printf("Accepted\n");}
+<INITIAL>\n   {BEGIN INITIAL; printf("Not accepted\n");}
 
-<A>0   BEGIN INITIAL;
+<A>0   BEGIN A;
 <A>1   BEGIN B;
 <A>[^01\n]  BEGIN DEAD;
-<A>\n   {BEGIN INITIAL; printf("Not accepted\n");}
+<A>\n   {BEGIN INITIAL; printf("Accepted\n");}
 
-<B>0  BEGIN C;
-<B>1  BEGIN A;
+<B>0  BEGIN A;
+<B>1  BEGIN B;
 <B>[^01\n] BEGIN DEAD;
 <B>\n   {BEGIN INITIAL; printf("Not accepted\n");}
 
-<C>0  BEGIN B;
-<C>1  BEGIN INITIAL;
+<C>0  BEGIN D;
+<C>1  BEGIN C;
 <C>[^01\n] BEGIN DEAD;
-<C>\n   {BEGIN INITIAL; printf("Not accepted\n");}
+<C>\n   {BEGIN INITIAL; printf("Accepted\n");}
+
+<D>0  BEGIN D;
+<D>1  BEGIN C;
+<D>[^01\n] BEGIN DEAD;
+<D>\n   {BEGIN INITIAL; printf("Not accepted\n");}
 
 <DEAD>0  BEGIN DEAD;
 <DEAD>1  BEGIN DEAD;
@@ -36,7 +41,7 @@ int yywrap(){
 }
 
 int main(){
-  printf("DFA with 5 states (INITIAL, A, B, C, DEAD)\n");
+  printf("DFA - Accepts strings that start and end with same character\n");
   printf("Enter binary strings (press Ctrl+D or Ctrl+Z to exit):\n\n");
   
   yylex();
