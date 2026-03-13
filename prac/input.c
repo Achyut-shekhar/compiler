@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /* This is a multi-line comment
    that spans across several lines */
 
@@ -9,3 +11,7 @@ int main()
   int sum = a + b;
 
   /* Print the results to the console */
+  printf("The sum of %d and %d is %d\n", a, b, sum);
+
+  return 0;
+}
