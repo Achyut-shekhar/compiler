@@ -7,7 +7,7 @@ int main()
 {
   // This is a single-line comment
   int a = 10;
-  int b = 20;
+  int b =           20;
   int sum = a + b;
 
   /* Print the results to the console */
