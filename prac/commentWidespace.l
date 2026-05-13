@@ -3,7 +3,7 @@
 %}
 %%
 "//".* {fprintf(yyout,"comment: %s",yytext);}
-[ \t]+  ;
+[\t]+  ;
 .|\n   {fprintf(yyout,"%s",yytext);}
 %%
 int yywrap(){
